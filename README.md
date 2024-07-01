@@ -3,9 +3,11 @@
 Simulation of a liposome breaking with an one-dimensional random walk.
 
 ## Setup
+
 $N$ walkers are confined on $x = [0,1)$; the boundary conditions are such that there is a wall at $x = 0$ and a drain at $x = 1$. Space is discretized with $m$ divisions such that the walker's step is $l = 1/m$.
 
 ## Problem
+
 We intend to study the exponential behavior of the number of particles *inside* the liposome as a function of time. To do so, we intend to obtain the $\tau_{num}$ exponent through the simulation and compare it with the theoretical value obtained for a diffusion process:
 
 $$\tau_{theor} = \frac{4L^2}{D\pi^2}$$
