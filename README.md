@@ -18,10 +18,10 @@ $$\tau_{theor} = \frac{8}{l^2 \pi^2} = \frac{8m^2}{\pi^2}$$
 
 Script ```liposome.py``` contains the main program. It runs the simulation for $N$ particles for $m \in \{10,100,1000,10000\}$. The simulation time is chosen empirically as:
 
-    * $t_{max} = 10000$ for $m = 10$;
-    * $t_{max} = 30000$ for $m = 100$;
-    * $t_{max} = 50000$ for $m = 1000$;
-    * $t_{max} = 150000$ for $m = 10000$.
+* $t_{max} = 10000$ for $m = 10$;
+* $t_{max} = 30000$ for $m = 100$;
+* $t_{max} = 50000$ for $m = 1000$;
+* $t_{max} = 150000$ for $m = 10000$.
 
 $N$ may be given as an argument when calling the script; if not, the program will run with the default value $N = 10000$.
 
