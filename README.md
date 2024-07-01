@@ -12,7 +12,7 @@ We intend to study the exponential behavior of the number of particles *inside* 
 
 $$\tau_{theor} = \frac{4L^2}{D\pi^2}$$
 
-where $D = \frac{l^2}{2\bar{t}}$ is the diffusion constant and $\bar{t}$ is the time between steps. In this case, $\bar{t} = 1$ MCS (Monte Carlo Step) and $L = 1$. Therefore, we may write
+where $D = \frac{l^2}{2\bar{t}}$ is the diffusion constant, with $\bar{t}$ being the time between steps. In this case, $\bar{t} = 1$ MCS (Monte Carlo Step) and $L = 1$. Therefore, we may write
 
 $$\tau_{theor} = \frac{8}{l^2 \pi^2} = \frac{8m^2}{\pi^2}$$
 
