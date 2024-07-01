@@ -25,7 +25,7 @@ m_list = [100,1000,10000] # m values (for m=10 all particles were removed)
 fig, axes = plt.subplots(nrows=1,ncols=3,figsize=(12,6)) # initialize plot
 
 for m, ax in zip(m_list,axes):
-    file = glob(f'randw-position_N{N}_m{m}_t{t}_*.dat')[0] # get first file that matches pattern, independent of seed
+    file = glob(f'files/randw-position_N{N}_m{m}_t{t}_*.dat')[0] # get first file that matches pattern, independent of seed
     walkers, positions = np.loadtxt(file,unpack=True)
     ax.hist(positions,bins=int(m/4),density=True)
     ax.set_xlim(0,1)

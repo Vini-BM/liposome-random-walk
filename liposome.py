@@ -4,7 +4,6 @@ Created: 27-03-2024
 Last updated: 01-07-2024
 
 Simulates the liposome breaking with random walkers.
-
 '''
 
 # Imports
@@ -63,8 +62,8 @@ def main(N=10000):
         ## each walker has a unique seed generated from the same 'global' seed
 
         # Output files
-        fileN = f'randw-number_N{N}_m{m}_t{tmax}_{seed}.dat'
-        fileX = f'randw-position_N{N}_m{m}_t{tmax}_{seed}.dat'
+        fileN = f'files/randw-number_N{N}_m{m}_t{tmax}_{seed}.dat'
+        fileX = f'files/randw-position_N{N}_m{m}_t{tmax}_{seed}.dat'
 
         # Walk
         with open(fileN,'w') as outN:

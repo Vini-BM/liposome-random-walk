@@ -34,7 +34,7 @@ axes = [axes[0][0],axes[0][1],axes[1][0],axes[1][1]] # linearize axes for access
 
 for params, ax in zip(params_list,axes):
     m, t = params
-    file = glob(f'randw-number_N{N}_m{m}_t{t}_*.dat')[0] # get first file that matches pattern, independent of seed
+    file = glob(f'files/randw-number_N{N}_m{m}_t{t}_*.dat')[0] # get first file that matches pattern, independent of seed
     tau = get_tau(m)
     time, num_walkers = np.loadtxt(file,unpack=True)
     decay = N*np.exp(-time/tau) # theoretical decay
