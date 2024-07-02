@@ -34,8 +34,8 @@ def decay_fit(x,tau,constant):
     return constant*np.exp(-x/tau)
 
 # Parameters
-N = 1000
-params_list = [(10,1000,10),(100,30000,300),(1000,50000,25000),(10000,150000,60000)] # (m, tmax, start)
+N = 10000
+params_list = [(10,1000,100),(100,30000,3000),(1000,75000,30000),(10000,200000,70000)] # (m, tmax, start)
 tau_list = [] # list for storing the numerical and theoretical exponent
 
 # Number of particles
@@ -67,14 +67,11 @@ for params, ax in zip(params_list,axes):
     ax.plot(time,num_walkers,label='Data')
 
     # Fit data
-    #tstart = int(t/10) # end of transient regime
     log_num = np.log(num_walkers)
     fit = linregress(time[start:end],log_num[start:end]) # linear fit on ln(N(t))
     num_tau = -1/fit.slope # numerical exponent
     const = np.exp(fit.intercept) # multiplicative constant
     tau_list.append((num_tau,theor_tau)) # storing values for table
-
-    #print(num_tau, theor_tau)
 
     # Plot fit
     fit_data = decay_fit(time[start:end],num_tau,const)
@@ -83,7 +80,7 @@ for params, ax in zip(params_list,axes):
     # Axis attributes
     ax.set_xlim(0,t)
     ax.set_yscale('log')
-    ax.set_title(rf'$m = {m}$')
+    ax.set_title(rf'$m = {m}$ | Mean of ${len(files)}$ samples')
     ax.legend()
 
 fig.supxlabel(r'$t$')

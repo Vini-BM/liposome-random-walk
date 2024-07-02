@@ -52,7 +52,7 @@ def main(N=10000):
 
     # Initialization
     #m_list = [10,100,1000,10000] # interval division
-    #tmax_list = [1000,30000,50000,200000] # walk time
+    #tmax_list = [1000,30000,75000,200000] # walk time
     m_list = [10000]
     tmax_list = [200000]
 

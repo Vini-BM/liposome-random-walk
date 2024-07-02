@@ -17,19 +17,26 @@ plt.rcParams.update({
 })
 
 # Parameters
+# Parameters
 N = 10000
-t = 15000
-m_list = [100,1000,10000] # m values (for m=10 all particles were removed)
+params_list = [(100,30000,30),(1000,75000,60),(10000,200000,75)] # (m, tmax, bins)
 
 # Histogram
-fig, axes = plt.subplots(nrows=1,ncols=3,figsize=(12,6)) # initialize plot
+fig, axes = plt.subplots(nrows=1,ncols=3,figsize=(16,6)) # initialize plot
+plt.subplots_adjust(left=0.075,right=0.95)
 
-for m, ax in zip(m_list,axes):
-    file = glob(f'files/randw-position_N{N}_m{m}_t{t}_*.dat')[0] # get first file that matches pattern, independent of seed
-    walkers, positions = np.loadtxt(file,unpack=True)
-    ax.hist(positions,bins=int(m/4),density=True)
+for params, ax in zip(params_list,axes):
+    m, t, bins = params
+    files = glob(f'files/randw-position_N{N}_m{m}_t{t}_*.dat')
+    positions = []
+    for file in files:
+        walkers, pos = np.loadtxt(file,unpack=True)
+        positions.extend(pos)
+    ax.hist(positions,bins=bins,density=True)
     ax.set_xlim(0,1)
+    ax.set_title(rf'$m = {m}$ | $t_{{max}} = {t}$ | ${len(files)}$ samples')
 fig.supxlabel(r'$x$')
 fig.supylabel(r'$\rho$')
-fig.suptitle(rf'Particle density inside liposome at $t={t}$ | $N_0 = {N}$')
+fig.suptitle(rf'Particle density inside liposome at $t_{{max}}$ | $N_0 = {N}$')
+plt.savefig('plots/liposomeHistogram.png', dpi=300)
 plt.show()
