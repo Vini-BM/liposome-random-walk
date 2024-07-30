@@ -27,4 +27,6 @@ Script ```liposome.py``` contains the main program. It runs the simulation for $
 
 $N$ may be given as an argument when calling the script; if not, the program will run with the default value $N = 10000$.
 
-Each run uses a random 'global' seed for the PRNG and the $i^{\text{th}}$ walker has a unique seed given by $\text{seed} + 20*i$. The output of each run is a file of the form ```randw-number_*.dat``` containing the number of particles (walkers) inside the liposome at every instant, and a file of the form ```randw-position_*.dat``` containing the positions of all particles at the end of the walk.
+Each run uses a random 'global' seed for the PRNG and the $i^{\text{th}}$ walker has a unique seed given by $\text{seed} + 20*i$. The output of each run is a file of the form ```files/randw-number_*.dat``` containing the number of particles (walkers) inside the liposome at every instant, and a file of the form ```files/randw-position_*.dat``` containing the positions of all particles at the end of the walk.
+
+Image ```plots/liposomeNumberWalkers.png``` contains the main results from the program, showing the number of walkers as a function of time for each value of $m$ and comparing with the theoretical curve. File ```files/numerical_tau_N*.txt``` contains a simple table with measurements and errors of $\tau$ for each $m$. A secondary result is shown in ```plots/liposomeHistogram.png```, which represents the walker density inside the liposome at the end of the walk.
