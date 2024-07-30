@@ -86,7 +86,7 @@ for params, ax in zip(params_list,axes):
 fig.supxlabel(r'$t$')
 fig.supylabel(r'$N/N_0$')
 fig.suptitle(rf'Number of particles inside liposome | $N_0 = {N}$')
-#plt.savefig(f'plots/liposomeNumberWalkers.png', dpi=300)
+plt.savefig(f'plots/liposomeNumberWalkers.png', dpi=300)
 plt.show()
 
 # Text file with table
